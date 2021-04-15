@@ -32,13 +32,13 @@ let company;
 let state = 'USA'
 let clean = false;
 var tagText;
-var predictionText = "Next bonus"
+var groupText = "Group average"
 var averageText = "Average"
 var Qtext;
-var predictionQ = 'What will be the bonus this Requester give in a month?'
-var averagingQ = 'What is the average of this series?'
+var groupQ = 'What is the average of this group?'
+var individualQ = 'What is the average of this person?'
 var currentChange ;
-var predictionTrial;
+var groupTrial;
 var numColor;
 var colorText = ["black", "blue"]
 
@@ -390,10 +390,10 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
       trady: true,
     }),
 
-    prediction = new lab.canvas.Screen({
+    groupmean = new lab.canvas.Screen({
       viewportScale: 1,
       trady: true,
-      title: 'predictionScale',
+      title: 'groupmeanScale',
       renderFunction: estimate,
       //responses:{'keypress(Enter)': Estimate},
       events: {
@@ -402,7 +402,7 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
             this.data.RT = this.timer
             this.data.trial = t_i + 1
             this.data.mean = param.realMu
-            this.data.prediction = Estimate
+            this.data.groupmean = Estimate
             this.data.reportedChange = currentChange
             this.data.block = blockName
             this.end()
@@ -418,8 +418,8 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
         'reportedChange': '',
       },
       messageHandlers: {
-        'before:run' : () => {predictionTrial =true},
-        'after:end': () => { predictionTrial =false
+        'before:run' : () => {groupTrial =true},
+        'after:end': () => { groupTrial =false
         },
       }
     })
@@ -460,7 +460,7 @@ const study = new lab.flow.Sequence({
 
     instrucB1 = new lab.html.Screen({
       contentUrl: 'pages/instruc-individualFirst.html',
-      title: 'instructionsPrediction',
+      title: 'instructionsIndividualFirst',
       responses: {
         'keypress(Space)': 'continue'
       },
@@ -474,7 +474,7 @@ const study = new lab.flow.Sequence({
  
     instrucB1 = new lab.html.Screen({
       contentUrl: 'pages/instruc-groupSecond.html',
-      title: 'instructionsPrediction',
+      title: 'instructionsGroup',
       responses: {
         'keypress(Space)': 'continue'
       },
@@ -493,8 +493,8 @@ const study = new lab.flow.Sequence({
         'before:run': () => {
           trials = practice
           blockName = "practice"
-          tagText = predictionText
-          Qtext = predictionQ
+          tagText = groupText
+          Qtext = groupQ
           t_i = 0;
           numColor = colorText[1]
         },
