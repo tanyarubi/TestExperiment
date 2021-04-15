@@ -672,7 +672,7 @@ function estimate(ts, canvas, ctx, obj) {
           slider.display();
           p.textStyle(p.BOLD)
           p.textSize(19)
-          if (predictionTrial){
+          if (groupTrial){
           p.text("Imagine taking a HIT by " + name , p.width / 2, p.height * 0.4)}
           p.textStyle(p.NORMAL)
           p.textSize(16)
