@@ -459,7 +459,7 @@ const study = new lab.flow.Sequence({
     }),
 
     instrucB1 = new lab.html.Screen({
-      contentUrl: 'pages/instruc-predictFirst.html',
+      contentUrl: 'pages/instruc-individualFirst.html',
       title: 'instructionsPrediction',
       responses: {
         'keypress(Space)': 'continue'
@@ -473,7 +473,7 @@ const study = new lab.flow.Sequence({
 
  
     instrucB1 = new lab.html.Screen({
-      contentUrl: 'pages/instruc-averagingOnlySecond.html',
+      contentUrl: 'pages/instruc-groupSecond.html',
       title: 'instructionsPrediction',
       responses: {
         'keypress(Space)': 'continue'
