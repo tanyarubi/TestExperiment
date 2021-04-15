@@ -62,7 +62,8 @@ var germanCities = ['Berlin',	'Berlin',	'Berlin',	'Berlin',	'Berlin',	'Hamburg',
                    'Tulsa, Oklahoma',	'Arlington, Texas',	'Tampa, Florida',	'San Jose, California',	'San Jose, California',
                      'San Jose, California',	'San Jose, California',	'San Jose, California',	'Palo Alto, California',
                      	'Palo Alto, California',	'Sunnyvale, California',]
-//flow paramaters
+
+ //flow paramaters
 var Npractice = 1;
 var Ntrials = 6;
 var show_RT = 500; //milisec
@@ -191,7 +192,7 @@ function plus(ts, canvas, ctx, obj) {
   ctx.fillStyle = "black"
   ctx.textAlign = "center"
   //ctx.font="15px sans-serif"
-  //ctx.fillText('Get ready',-7.5, -screen.height/4)
+  //ctx.fillText('Get ready',-7.5, -screenImg.height/4)
   ctx.font = "14px sans-serif"
   ctx.fillText('Get ready', -15, screenImg.height / 8)
 }
@@ -220,13 +221,13 @@ function reportChange (ts, canvas, ctx, obj) {
   //ctx.font="15px sans-serif"
   //ctx.fillText('Get ready',-7.5, -canvas.height/4)
   let txt;
-//  if (currentChange == 0){
-//    txt = name + " is not expected to change the bonus sum."
-//  } else if (currentChange > 0) {
-//    txt = name + " is expected to raise the bonuses by " + String(currentChange) + "%."
-//  } else if (currentChange < 0){
-//    txt = name + " is expected to decrease the bonuses by " + String(-1*currentChange) + "%."
-//  }
+  if (currentChange == 0){
+    txt = name + " is not expected to change the bonus sum."
+  } else if (currentChange > 0) {
+    txt = name + " is expected to raise the bonuses by " + String(currentChange) + "%."
+  } else if (currentChange < 0){
+    txt = name + " is expected to decrease the bonuses by " + String(-1*currentChange) + "%."
+  }
 
   ctx.font = "14px sans-serif"
   ctx.fillText(txt, -15, screenImg.height / 8)
