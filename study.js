@@ -249,7 +249,7 @@ var samplingScreen = new lab.canvas.Screen({
 })
 
 
-var trialTemp_averagingOnly = new lab.flow.Sequence({
+var trialTemp_averagingIndiv = new lab.flow.Sequence({
   tardy: true,
   datacommit: false,
   content: [
@@ -325,7 +325,7 @@ var trialTemp_averagingOnly = new lab.flow.Sequence({
 }
 )
 
-var trialTemp_expectedInfo = new lab.flow.Sequence({
+var trialTemp_averagingGroup = new lab.flow.Sequence({
   tardy: true,
   datacommit: false,
   content: [
@@ -485,7 +485,7 @@ const study = new lab.flow.Sequence({
     }),
 
     practiceBlock = new lab.flow.Loop({
-      template: trialTemp_averagingOnly,
+      template: trialTemp_averagingIndiv,
       templateParameters: practice,
       trady: true,
       datacommit: false,
@@ -508,7 +508,7 @@ const study = new lab.flow.Sequence({
     }),
 
     Onlyaveraging = new lab.flow.Loop({
-      template: trialTemp_averagingOnly,
+      template: trialTemp_averagingIndiv,
       templateParameters: maintrials,
       trady: true,
       datacommit: false,
