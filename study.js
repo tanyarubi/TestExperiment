@@ -447,7 +447,7 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
     }),
 
     reportChange = new lab.canvas.Screen({
-      renderFunction: repoertChange,
+      renderFunction: reportChange,
       timeout: 3000,
       datacommit: false,
       trady: true,
@@ -457,7 +457,7 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
       viewportScale: 1,
       trady: true,
       title: 'groupmeanScale',
-      renderFunction: estimate,
+      renderFunction: groupmean,
       //responses:{'keypress(Enter)': Estimate},
       events: {
         'keypress(Space)': function () {
@@ -570,7 +570,7 @@ const study = new lab.flow.Sequence({
       timeout:2000,
     }),
 
-    Onlyaveraging = new lab.flow.Loop({
+    averagingIndiv = new lab.flow.Loop({
       template: trialTemp_averagingIndiv,
       templateParameters: maintrials,
       trady: true,
@@ -579,7 +579,7 @@ const study = new lab.flow.Sequence({
         'before:run': () => {
           trials = maintrials
           t_i = 0;
-          blockName = "averaging"
+          blockName = "individual"
         },
       }
     }),
@@ -610,12 +610,12 @@ const study = new lab.flow.Sequence({
 /********************************************slider function************************************************************/
 function estimate(ts, canvas, ctx, obj) {
   if (groupTrial) {
-    outcome = "What is this group's average aerobic minutes?";
-    tagText = "group average"
+    outcome = "What is this person's average aerobic minutes?";
+    tagText = "individual average"
 } 
     else  {
-      outcome = "What is this person's average aerobic minutes?";
-      tagText = "individual average"}
+    outcome = "What is this group's average aerobic minutes?";
+    tagText = "group average"}
   
   drawStage(ts, canvas, ctx, obj)
   ctx.font = "16px sans-serif"
