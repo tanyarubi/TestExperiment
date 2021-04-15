@@ -32,10 +32,10 @@ let company;
 let state = 'USA'
 let clean = false;
 var tagText;
-//var predictionText = "Next bonus"
+var predictionText = "Next bonus"
 var averageText = "Average"
 var Qtext;
-//var predictionQ = 'What will be the bonus this Requester give in a month?'
+var predictionQ = 'What will be the bonus this Requester give in a month?'
 var averagingQ = 'What is the average of this series?'
 var currentChange ;
 var predictionTrial;
