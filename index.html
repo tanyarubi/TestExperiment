@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Experiment</title>
+  <!-- viewport setup -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- lab.js and libraries -->
+  <script src="lib/lab.js" data-labjs-script="library"></script>
+  <script src="lib/lab.fallback.js" data-labjs-script="fallback"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5/lib/p5.min.js"></script>
+  <link rel="stylesheet" href="lib/lab.css">
+  <!-- actual experiment code -->
+  <script defer src="stochasm.js"></script>
+  <script defer src="study.js"></script>
+</head>
+<body>
+  <!-- If you'd rather have a container with a fixed width
+       and variable height, try removing the fullscreen class below -->
+  <div class="container fullscreen content-vertical-center content-horizontal-center" data-labjs-section="main"  style="background-color:gray">
+
+    <main
+      class="content-vertical-center content-horizontal-center"
+       style="background-color:gray"
+    >
+      <!-- the nested div is helpful because the centering would
+           otherwise break the natural flow of content -->
+      <div>
+        <img src="lib/loading.svg" alt="loading icon" style="padding: 1rem"><br>
+        <p>
+          <strong>Preparing experiment</strong><br>
+          <span class="text-muted">please wait a moment</span>
+        </p>
+      </div>
+    </main>
+   
+  </div>
+</body>
+</html>
