@@ -609,13 +609,13 @@ const study = new lab.flow.Sequence({
 
 /********************************************slider function************************************************************/
 function estimate(ts, canvas, ctx, obj) {
-  if (predictionTrial) {
-    outcome = "What bonus will " + name + " offer on next HIT?";
-    tagText = "Next bonus"
+  if (groupTrial) {
+    outcome = "What is this group's average aerobic minutes?";
+    tagText = "group average"
 } 
     else  {
-      outcome = "What is the average bonus " + name + " pays?";
-      tagText = "Average bonus"}
+      outcome = "What is this person's average aerobic minutes?";
+      tagText = "individual average"}
   
   drawStage(ts, canvas, ctx, obj)
   ctx.font = "16px sans-serif"
