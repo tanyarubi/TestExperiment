@@ -64,7 +64,7 @@ var germanCities = ['Berlin',	'Berlin',	'Berlin',	'Berlin',	'Berlin',	'Hamburg',
                      	'Palo Alto, California',	'Sunnyvale, California',]
 //flow paramaters
 var Npractice = 1;
-var Ntrials = 42;
+var Ns = 42;
 var show_RT = 500; //milisec
 
 //pardigm parameters
@@ -211,7 +211,7 @@ function RequesterInfo (ts, canvas, ctx, obj) {
   ctx.fillText(txt, -15, screenImg.height / 8)
 }
 
-function repoertChange (ts, canvas, ctx, obj) {
+function reportChange (ts, canvas, ctx, obj) {
   let c = canvas
   ctx.fillStyle = "gray"
   ctx.fillRect(-c.width / 2, -c.height / 2, c.width, c.height)
@@ -672,7 +672,7 @@ function estimate(ts, canvas, ctx, obj) {
           slider.display();
           p.textStyle(p.BOLD)
           p.textSize(19)
-          if (groupTrial){
+          if (predictionTrial){
           p.text("Imagine taking a HIT by " + name , p.width / 2, p.height * 0.4)}
           p.textStyle(p.NORMAL)
           p.textSize(16)
