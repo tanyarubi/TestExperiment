@@ -85,36 +85,36 @@ function t() {
 }
 
 
-//names = labRand.shuffle(names)
-//cities = labRand.shuffle(cities)
-//practiceName = ["Requester X", "Requester X", "Requester X"]
-//creat trials array
+names = labRand.shuffle(names)
+cities = labRand.shuffle(cities)
+practiceName = ["Requester X", "Requester X", "Requester X"]
+//create trials array
 for (i = 0; i <= Npractice - 1; i++) {
   practice[i] = new t()
-//  practice[i].name1 = practiceName[i]
-//  practice[i].name2 = practiceName[i]
-//  practice[i].city = "Y"
-//  practice[i].company1 = "Z"
-//  practice[i].company2 = "Z"
-//  practice[i].reportedChange = 10
+  practice[i].name1 = practiceName[i]
+  practice[i].name2 = practiceName[i]
+  practice[i].city = "Y"
+  practice[i].company1 = "Z"
+  practice[i].company2 = "Z"
+  practice[i].reportedChange = 10
 }
 //reported change vector
-//var incrase = stochasm({kind: "integer", min: 8, max: 12})
-//var decrease = stochasm({kind: "integer", min: -12, max: -8})
-//incrase.roll=incrase.next
-//decrease.roll=decrease.next
+var incrase = stochasm({kind: "integer", min: 8, max: 12})
+var decrease = stochasm({kind: "integer", min: -12, max: -8})
+incrase.roll=incrase.next
+decrease.roll=decrease.next
 
-//var ChageVector= incrase.roll(Ntrials/3).concat(decrease.roll(Ntrials/3)).concat(Array(Ntrials/3).fill(0))
-//ChageVector = labRand.shuffle(ChageVector)
+var ChageVector= incrase.roll(Ntrials/3).concat(decrease.roll(Ntrials/3)).concat(Array(Ntrials/3).fill(0))
+ChageVector = labRand.shuffle(ChageVector)
 
 
 for (i = 0; i <= Ntrials - 1; i++) {
   maintrials[i] = new t()
-//  maintrials[i].name1 = names.pop()
-//  maintrials[i].name2 = names.pop()
-//  maintrials[i].company1 = labRand.choice(firms)
-//  maintrials[i].company2 = labRand.choice(firms)
-//  maintrials[i].reportedChange = ChageVector[i]
+  maintrials[i].name1 = names.pop()
+  maintrials[i].name2 = names.pop()
+  maintrials[i].company1 = labRand.choice(firms)
+  maintrials[i].company2 = labRand.choice(firms)
+  maintrials[i].reportedChange = ChageVector[i]
 }
 
 maintrials_shuffel = labRand.shuffle(maintrials)
