@@ -535,7 +535,7 @@ const study = new lab.flow.Sequence({
 
 
     practiceBlock = new lab.flow.Loop({
-      template: trialTemp_expectedInfo,
+      template: trialTemp_averagingGroup,
       templateParameters: practice,
       trady: true,
       datacommit: false,
@@ -543,8 +543,8 @@ const study = new lab.flow.Sequence({
         'before:run': () => {
           trials = practice
           blockName = "practice"
-          tagText = predictionText
-          Qtext = predictionQ
+          tagText = groupText
+          Qtext = groupQ
           t_i = 0;
           numColor = colorText[0]
         },
