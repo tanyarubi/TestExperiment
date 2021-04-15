@@ -457,7 +457,7 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
       viewportScale: 1,
       trady: true,
       title: 'groupmeanScale',
-      renderFunction: groupmean,
+      renderFunction: Estimate,
       //responses:{'keypress(Enter)': Estimate},
       events: {
         'keypress(Space)': function () {
