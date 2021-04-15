@@ -128,9 +128,9 @@ function plus(ts, canvas, ctx, obj) {
   ctx.fillStyle = "black"
   ctx.textAlign = "center"
   //ctx.font="15px sans-serif"
-  //ctx.fillText('Get ready',-7.5, -screenImg.height/4)
+  //ctx.fillText('Get ready',-7.5, -screen.height/4)
   ctx.font = "14px sans-serif"
-  ctx.fillText('Get ready', -15, screenImg.height / 8)
+  ctx.fillText('Get ready', -15, canvas.height / 8)
 }
 
 function RequesterInfo (ts, canvas, ctx, obj) {
@@ -140,12 +140,12 @@ function RequesterInfo (ts, canvas, ctx, obj) {
   ctx.fillStyle = "black"
   ctx.textAlign = "center"
   //ctx.font="15px sans-serif"
-  //ctx.fillText('Get ready',-7.5, -screenImg.height/4)
+  //ctx.fillText('Get ready',-7.5, -screen.height/4)
   
 
   let txt= name + ", has completed the following minutes of aerobic exercise a day"
   ctx.font = "14px sans-serif"
-  ctx.fillText(txt, -15, screenImg.height / 8)
+  ctx.fillText(txt, -15, canvas.height / 8)
 }
 
 function repoertChange (ts, canvas, ctx, obj) {
@@ -155,7 +155,7 @@ function repoertChange (ts, canvas, ctx, obj) {
   ctx.fillStyle = "black"
   ctx.textAlign = "center"
   //ctx.font="15px sans-serif"
-  //ctx.fillText('Get ready',-7.5, -screenImg.height/4)
+  //ctx.fillText('Get ready',-7.5, -canvas.height/4)
   let txt;
 //  if (currentChange == 0){
 //    txt = name + " is not expected to change the bonus sum."
@@ -166,7 +166,7 @@ function repoertChange (ts, canvas, ctx, obj) {
 //  }
 
   ctx.font = "14px sans-serif"
-  ctx.fillText(txt, -15, screenImg.height / 8)
+  ctx.fillText(txt, -15, canvas.height / 8)
 }
 
 function drawsample(ts, canvas, ctx, obj) {
@@ -186,18 +186,18 @@ function drawsample(ts, canvas, ctx, obj) {
     if (!isNaN(outcome)){
       ctx.font = "20px sans-serif"
       if (clean){
-        ctx.fillText(outcome, -15, screenImg.height / 8)
+        ctx.fillText(outcome, -15, canvas.height / 8)
       }
       else{
-      ctx.fillText(outcome + "¢", -15, screenImg.height / 8)
+      ctx.fillText(outcome + "¢", -15, canvas.height / 8)
     }}
     else {
-        ctx.fillText(outcome, -15, screenImg.height / 8)
+        ctx.fillText(outcome, -15, canvas.height / 8)
 
       }
   
   //ctx.font="15px sans-serif"
-  //ctx.fillText(notify,-7.5, -screenImg.height/2)
+  //ctx.fillText(notify,-7.5, -canvas.height/2)
 
 }
 
@@ -216,18 +216,18 @@ function drawStage(ts, canvas, ctx, obj) {
     if (!isNaN(outcome)){
       ctx.font = "20px sans-serif"
       if (clean){
-        ctx.fillText(outcome, -15, screenImg.height / 8)
+        ctx.fillText(outcome, -15, canvas.height / 8)
       }
       else{
-      ctx.fillText(outcome + "¢", -15, screenImg.height / 8)
+      ctx.fillText(outcome + "¢", -15, canvas.height / 8)
     }}
     else {
-        ctx.fillText(outcome, -15, screenImg.height / 8)
+        ctx.fillText(outcome, -15, canvas.height / 8)
 
       }
   
   //ctx.font="15px sans-serif"
-  //ctx.fillText(notify,-7.5, -screenImg.height/2)
+  //ctx.fillText(notify,-7.5, -canvas.height/2)
 
 }
 
