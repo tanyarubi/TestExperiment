@@ -534,6 +534,43 @@ const study = new lab.flow.Sequence({
     }),
 
 
+    practiceBlock = new lab.flow.Loop({
+      template: trialTemp_expectedInfo,
+      templateParameters: practice,
+      trady: true,
+      datacommit: false,
+      messageHandlers: {
+        'before:run': () => {
+          trials = practice
+          blockName = "practice"
+          tagText = predictionText
+          Qtext = predictionQ
+          t_i = 0;
+          numColor = colorText[0]
+        },
+      }
+    }),
+
+    pause = new lab.html.Screen({
+      content: "<p><b>Practice is over.</p> <br> <p><b>Try to be accurate as possible.</b></p>",
+      datacommit: true,
+      timeout:2000,
+    }),
+    reportedChangeBlock = new lab.flow.Loop({
+      template: trialTemp_expectedInfo,
+      templateParameters: maintrials_shuffel,
+      trady: true,
+      datacommit: false,
+      //sample:{n:undefined , mode: "draw"},
+      messageHandlers: {
+        'before:run': () => {
+          trials = maintrials_shuffel
+          blockName = "expectedInfo"
+          t_i = 0;
+        },
+      }
+    }),
+
  
     instrucB1 = new lab.html.Screen({
       contentUrl: 'pages/instruc-groupSecond.html',
