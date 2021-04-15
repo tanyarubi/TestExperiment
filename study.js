@@ -87,13 +87,13 @@ function t() {
 
 //names = labRand.shuffle(names)
 //cities = labRand.shuffle(cities)
-practiceName = ["Requester X", "Requester X", "Requester X"]
+//practiceName = ["Requester X", "Requester X", "Requester X"]
 //creat trials array
 for (i = 0; i <= Npractice - 1; i++) {
   practice[i] = new t()
-  practice[i].name1 = practiceName[i]
-  practice[i].name2 = practiceName[i]
-  practice[i].city = "Y"
+//  practice[i].name1 = practiceName[i]
+//  practice[i].name2 = practiceName[i]
+//  practice[i].city = "Y"
 //  practice[i].company1 = "Z"
 //  practice[i].company2 = "Z"
 //  practice[i].reportedChange = 10
@@ -169,7 +169,7 @@ function repoertChange (ts, canvas, ctx, obj) {
   ctx.fillText(txt, -15, screenImg.height / 8)
 }
 
-function drawsampel(ts, canvas, ctx, obj) {
+function drawsample(ts, canvas, ctx, obj) {
   let c = canvas
   let txt;
 
@@ -236,7 +236,7 @@ function drawStage(ts, canvas, ctx, obj) {
 var drawingSampleFunction;
 
 var samplingScreen = new lab.canvas.Screen({
-  renderFunction: drawsampel,
+  renderFunction: drawsample,
   tardy: true,
   timeout: show_RT,
   viewportScale: 1,
@@ -470,43 +470,6 @@ const study = new lab.flow.Sequence({
       datacommit: true,
     }),
 
-
-    practiceBlock = new lab.flow.Loop({
-      template: trialTemp_expectedInfo,
-      templateParameters: practice,
-      trady: true,
-      datacommit: false,
-      messageHandlers: {
-        'before:run': () => {
-          trials = practice
-          blockName = "practice"
-          tagText = predictionText
-          Qtext = predictionQ
-          t_i = 0;
-          numColor = colorText[0]
-        },
-      }
-    }),
-
-    pause = new lab.html.Screen({
-      content: "<p><b>Practice is over.</p> <br> <p><b>Try to be accurate as possible.</b></p>",
-      datacommit: true,
-      timeout:2000,
-    }),
-    reportedChangeBlock = new lab.flow.Loop({
-      template: trialTemp_expectedInfo,
-      templateParameters: maintrials_shuffel,
-      trady: true,
-      datacommit: false,
-      //sample:{n:undefined , mode: "draw"},
-      messageHandlers: {
-        'before:run': () => {
-          trials = maintrials_shuffel
-          blockName = "expectedInfo"
-          t_i = 0;
-        },
-      }
-    }),
 
  
     instrucB1 = new lab.html.Screen({
@@ -810,7 +773,7 @@ study.options.datastore = new lab.data.Store()
 
 function evaluate(ts, canvas, ctx, obj) {
   outcome = "?"
-  drawsampel(ts, canvas, ctx, obj)
+  drawsample(ts, canvas, ctx, obj)
   ctx.font = "400 19px sans-serif"
   ctx.fillText('How much would you recommend another player to play this machine?', 0, -canvas.height*0.2)
   ctx.font = "16px sans-serif"
