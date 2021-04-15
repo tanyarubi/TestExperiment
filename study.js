@@ -557,7 +557,7 @@ const study = new lab.flow.Sequence({
       timeout:2000,
     }),
     reportedChangeBlock = new lab.flow.Loop({
-      template: trialTemp_expectedInfo,
+      template: trialTemp_averagingGroup,
       templateParameters: maintrials_shuffel,
       trady: true,
       datacommit: false,
