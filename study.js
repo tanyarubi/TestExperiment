@@ -454,10 +454,10 @@ var trialTemp_averagingGroup = new lab.flow.Sequence({
       trady: true,
     }),
 
-    groupmean = new lab.canvas.Screen({
+    prediction = new lab.canvas.Screen({
       viewportScale: 1,
       trady: true,
-      title: 'groupmeanScale',
+      title: 'predictionScale',
       renderFunction: Estimate,
       //responses:{'keypress(Enter)': Estimate},
       events: {
