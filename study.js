@@ -1,4 +1,67 @@
+//load img files
+var machineImg = new Image()
+machineImg.src = 'img/machine.png'
+var screenImg = new Image()
+screenImg.src = 'img/screen.png'
 
+//load names
+var names_full = ['James Smith',	'John Johnson',	'Robert Williams',	'Michael Brown',	'William Jones',
+  'David Miller',	'Richard Davis',	'Joseph Garcia',	'Thomas Rodriguez',	'Charles Wilson',	'Christopher Martinez',
+    'Daniel Anderson',	'Matthew Taylor',	'Anthony Thomas',	'Donald Hernandez',	'Mark Moore',	'Paul Martin',
+      'Steven Jackson',	'Andrew Thompson',	'Kenneth White',	'Joshua Lopez',	'George Lee',	'Kevin Gonzalez',
+        'Brian Harris',	'Edward Clark',	'Mary Lewis',	'Patricia Robinson',	'Jennifer Walker',	'Linda Perez',
+          'Elizabeth Hall',	'Barbara Young',	'Susan Allen',	'Jessica Sanchez',	'Sarah Wright',	'Karen King',
+            'Nancy Scott',	'Margaret Green',	'Lisa Baker',	'Betty Adams',	'Dorothy Nelson',	'Sandra Hill',
+              'Ashley Ramirez',	'Kimberly Campbell',	'Donna Mitchell',	'Emily Roberts',	'Michelle Carter',
+                'Carol Phillips',	'Amanda Evans',	'Melissa Turner',	'Deborah Torres',]
+var names = ['James S.',	'John J.',	'Robert W.',	'Michael B.',	'William J.',	'David M.',	'Richard D.',	'Joseph G.',	'Thomas R.',
+  'Charles W.',	'Christopher M.',	'Daniel A.',	'Matthew T.',	'Anthony T.',	'Donald H.',	'Mark M.',	'Paul M.',	'Steven J.',	'Andrew T.',
+    'Kenneth W.',	'Joshua L.',	'George L.',	'Kevin G.',	'Brian H.',	'Edward C.',	'Mary L.',	'Patricia R.',	'Jennifer W.',	'Linda P.',
+      'Elizabeth H.',	'Barbara Y.',	'Susan A.',	'Jessica S.',	'Sarah W.',	'Karen K.',	'Nancy S.',	'Margaret G.',	'Lisa B.',	'Betty A.',
+        'Dorothy N.',	'Sandra H.',	'Ashley R.',	'Kimberly C.',	'Donna M.',	'Emily R.',	'Michelle C.',	'Carol P.',	'Amanda E.',	'Melissa T.',	'Deborah T.',
+        'James S.',	'John J.',	'Robert W.',	'Michael B.',	'William J.',	'David M.',	'Richard D.',	'Joseph G.',	'Thomas R.',
+  'Charles W.',	'Christopher M.',	'Daniel A.',	'Matthew T.',	'Anthony T.',	'Donald H.',	'Mark M.',	'Paul M.',	'Steven J.',	'Andrew T.',
+    'Kenneth W.',	'Joshua L.',	'George L.',	'Kevin G.',	'Brian H.',	'Edward C.',	'Mary L.',	'Patricia R.',	'Jennifer W.',	'Linda P.',
+      'Elizabeth H.',	'Barbara Y.',	'Susan A.',	'Jessica S.',	'Sarah W.',	'Karen K.',	'Nancy S.',	'Margaret G.',	'Lisa B.',	'Betty A.',
+      	'Dorothy N.',	'Sandra H.',	'Ashley R.',	'Kimberly C.',	'Donna M.',	'Emily R.',	'Michelle C.',	'Carol P.',	'Amanda E.',	'Melissa T.',	'Deborah T.']
+                
+var germanNames = ['Alexander Müller',	'Andreas Schmidt',	'Christian Schneider',	'Daniel Fischer',
+  'Dennis Weber',	'Dieter Meyer',	'Ernst Wagner',	'Frank Becker',	'Fritz Schulz',	'Hermann Hoffmann',
+    'Jörg Schäfer',	'Kurt Koch',	'Manfred Bauer',	'Martin Richter',	'Otto Klein',	'Paul Wolf',
+      'Sebastian Schröder',	'Wolfgang Neumann',	'Friedrich Schwarz',	'Andrea Zimmermann',
+        'Angelika Braun',	'Anja Krüger',	'Christa Hofmann',	'Elke Hartmann',	'Hanna Lange',
+          'Erika Schmitt',	'Gabriele Werner',	'Gisela Schmitz',	'Ilse Krause',	'Ingrid Meier',
+            'Karin Lehmann',	'Katrin Schmid',	'Marie Schulze',	'Martina Maier',	'Monika Köhler',
+              'Melanie Herrmann',	'Nadine König',	'Nicole Walter',	'Petra Mayer',	'Sabine Huber',
+                'Sabrina Kaiser',	'Sandra Fuchs',	'Stefanie Peters',	'Susanne Lang',	'Maximilian Scholz',
+                  'Felix Möller',	'Jonas Weiß',	'Moritz Jung',	'Klara Hahn',	'Lilly Schubert',]
+                  
+
+var firms = ['Telecommunication company',	'Mobile Network Operator company',	'Software company',
+            'Software company',	'Marketing firm',	'Marketing firm',	'Marketing firm',	'PR Company',	'PR Company',
+              'Survey company',	'Survey company',	'Market research company',	'Market research company',
+                'Public Opinion Research company',	'Public Opinion Research company',	'Data Mining company',
+                  'Data Mining company',	'Employment agency']
+        
+var germanCities = ['Berlin',	'Berlin',	'Berlin',	'Berlin',	'Berlin',	'Hamburg',	'Hamburg',	'Hamburg',
+  'Hamburg',	'Munich',	'Munich',	'Munich',	'Munich',	'Köln',	'Köln',	'Köln',	'Köln',	'Frankfurt',	'Frankfurt',
+    'Frankfurt',	'Frankfurt',	'Stuttgart',	'Stuttgart',	'Stuttgart',	'Düsseldorf',	'Düsseldorf',	'Düsseldorf',
+      'Dortmund',	'Essen',	'Leipzig',	'Leipzig',	'Leipzig',	'Bremen',	'Dresden',	'Hannover',	'Hannover',	'Nürnberg',
+        'Nürnberg',	'Duisburg',	'Wuppertal',	'Bonn',	'Bonn',	'Bonn',	'Münster',	'Münster',	'Karlsruhe',	'Karlsruhe',
+          'Mannheim',	'Mannheim',	'Augsburg',]
+
+ var cities = ['New York City, New York',	'New York City, New York',	'New York City, New York',
+   'Los Angeles, California',	'Chicago, Illinois',	'Houston, Texas',	'Phoenix, Arizona',
+     'Philadelphia, Pennsylvania',	'San Diego, California',	'Dallas, Texas',	'San Jose, California',
+       'Austin, Texas',	'Jacksonville, Florida',	'San Francisco, California',	'Charlotte, North Carolina',
+         'Indianapolis, Indiana',	'Seattle, Washington',	'Seattle, Washington',	'Denver, Colorado',	'Denver, Colorado',
+           'Washington, D.C.',	'Washington, D.C.',	'Boston, Massachusetts',	'Boston, Massachusetts',	'Detroit, Michigan',
+             'Nashville, Tennessee',	'Portland, Oregon',	'Baltimore, Maryland',	'Milwaukee, Wisconsin',	'Fresno, California',
+               'Sacramento, California',	'Atlanta, Georgia',	'Kansas City, Missouri',	'Miami, Florida',	'Omaha, Nebraska',
+                 'Long Beach, California',	'Virginia Beach, Virginia',	'Oakland, California',	'Minneapolis, Minnesota',
+                   'Tulsa, Oklahoma',	'Arlington, Texas',	'Tampa, Florida',	'San Jose, California',	'San Jose, California',
+                     'San Jose, California',	'San Jose, California',	'San Jose, California',	'Palo Alto, California',
+                     	'Palo Alto, California',	'Sunnyvale, California',]
 //flow paramaters
 var Npractice = 1;
 var Ntrials = 42;
@@ -130,7 +193,7 @@ function plus(ts, canvas, ctx, obj) {
   //ctx.font="15px sans-serif"
   //ctx.fillText('Get ready',-7.5, -screen.height/4)
   ctx.font = "14px sans-serif"
-  ctx.fillText('Get ready', -15, canvas.height / 8)
+  ctx.fillText('Get ready', -15, screenImg.height / 8)
 }
 
 function RequesterInfo (ts, canvas, ctx, obj) {
@@ -145,7 +208,7 @@ function RequesterInfo (ts, canvas, ctx, obj) {
 
   let txt= name + ", has completed the following minutes of aerobic exercise a day"
   ctx.font = "14px sans-serif"
-  ctx.fillText(txt, -15, canvas.height / 8)
+  ctx.fillText(txt, -15, screenImg.height / 8)
 }
 
 function repoertChange (ts, canvas, ctx, obj) {
@@ -166,7 +229,7 @@ function repoertChange (ts, canvas, ctx, obj) {
 //  }
 
   ctx.font = "14px sans-serif"
-  ctx.fillText(txt, -15, canvas.height / 8)
+  ctx.fillText(txt, -15, screenImg.height / 8)
 }
 
 function drawsample(ts, canvas, ctx, obj) {
@@ -186,13 +249,13 @@ function drawsample(ts, canvas, ctx, obj) {
     if (!isNaN(outcome)){
       ctx.font = "20px sans-serif"
       if (clean){
-        ctx.fillText(outcome, -15, canvas.height / 8)
+        ctx.fillText(outcome, -15, screenImg.height / 8)
       }
       else{
-      ctx.fillText(outcome + "¢", -15, canvas.height / 8)
+      ctx.fillText(outcome + "¢", -15, screenImg.height / 8)
     }}
     else {
-        ctx.fillText(outcome, -15, canvas.height / 8)
+        ctx.fillText(outcome, -15, screenImg.height / 8)
 
       }
   
@@ -216,13 +279,13 @@ function drawStage(ts, canvas, ctx, obj) {
     if (!isNaN(outcome)){
       ctx.font = "20px sans-serif"
       if (clean){
-        ctx.fillText(outcome, -15, canvas.height / 8)
+        ctx.fillText(outcome, -15, screenImg.height / 8)
       }
       else{
-      ctx.fillText(outcome + "¢", -15, canvas.height / 8)
+      ctx.fillText(outcome + "¢", -15, screenImg.height / 8)
     }}
     else {
-        ctx.fillText(outcome, -15, canvas.height / 8)
+        ctx.fillText(outcome, -15, screenImg.height / 8)
 
       }
   
