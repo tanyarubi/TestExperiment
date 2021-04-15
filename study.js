@@ -64,7 +64,7 @@ var germanCities = ['Berlin',	'Berlin',	'Berlin',	'Berlin',	'Berlin',	'Hamburg',
                      	'Palo Alto, California',	'Sunnyvale, California',]
 //flow paramaters
 var Npractice = 1;
-var Ns = 42;
+var Ntrials = 42;
 var show_RT = 500; //milisec
 
 //pardigm parameters
