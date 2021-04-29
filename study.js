@@ -648,11 +648,11 @@ const study = new lab.flow.Sequence({
 /********************************************slider function************************************************************/
 function estimate(ts, canvas, ctx, obj) {
   if (groupTrial) {
-    outcome = "What is this person's average aerobic minutes?";
+    outcome = "What is this group's average aerobic minutes?";
     tagText = "individual average"
 } 
     else  {
-    outcome = "What is this group's average aerobic minutes?";
+    outcome = "What is this person's average aerobic minutes?";
     tagText = "group average"}
   
   drawStage(ts, canvas, ctx, obj)
