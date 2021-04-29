@@ -151,7 +151,7 @@ function t() {
 
 names = labRand.shuffle(names)
 cities = labRand.shuffle(cities)
-practiceName = ["Requester X", "Requester X", "Requester X"]
+practiceName = ["Person X", "Person X", "Person X"]
 //create trials array
 for (i = 0; i <= Npractice - 1; i++) {
   practice[i] = new t()
